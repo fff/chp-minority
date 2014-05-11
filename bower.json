@@ -1,0 +1,19 @@
+{
+  "name": "chp-minority",
+  "version": "1.0.0",
+  "authors": [
+    "fff <milel.f@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.1.1"
+  }
+}
