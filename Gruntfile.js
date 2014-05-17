@@ -11,7 +11,8 @@ module.exports = function(grunt) {
 			assets: {
 				files: [
 					{expand: true, cwd: 'bower_components/bootstrap/dist/', src: ['**'], dest: 'dist/assets/bootstrap/'},
-					{expand: true, cwd: 'bower_components/jquery/dist/', src: ['**'], dest: 'dist/assets/jquery/'}
+					{expand: true, cwd: 'bower_components/jquery/dist/', src: ['**'], dest: 'dist/assets/jquery/'},
+                    {expand: true, cwd: 'src/images/', src: ['**'], dest: 'dist/images/'}
 				]
 			}
     	},
