@@ -63,6 +63,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	
-	grunt.registerTask('default', ['clean', 'copy', 'jade', 'watch']);
+	grunt.registerTask('default', ['clean', 'copy', 'jade', 'less', 'watch']);
 
 };
