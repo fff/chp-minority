@@ -1,0 +1,12 @@
+-var gsize = 10
+-var gosize = (12-gsize)/2
+
+mixin article(title_cn, tilte_en)
+	.article
+		.article-title-block.row
+			.article-label
+			.article-title
+				strong= title_cn
+				.small= tilte_en
+		.article-body.row
+			block
