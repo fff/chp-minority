@@ -1,8 +1,12 @@
-.top,.buttom {
+.top,.bottom {
 	background-color: #e0e0e0;
 }
 
-.buttom {
+.top{
+	margin-bottom: 20px;
+}
+
+.bottom {
 	padding: 15px 0 15px 0;
 }
 
@@ -54,24 +58,39 @@
 }
 
 .article {
-	padding: 30px 150px 20px 30px;
+	padding: 30px 10px 0px 0px;
+
+	.article-left-panel{
+		width: 5px;
+		height: 50px;
+		display: inline-block;
+		margin-right: 25px;
+	}
 
 	.article-title-block {
 		.article-label {
 			background-color: #94272c;
 			width: 5px;
-			height: 50px;
+			height: 35px;
 			display: inline-block;
-			padding-left: -10px;
 		}
 
 		.article-title {
 			display: inline-block;
+			font-size: 16px;
 		}
 	}
 
 	.article-body {
-		padding-top: 30px;
+		padding-top: 10px;
+		.article-content{
+			display: inline-block;
+			width: 90%;
+		}
 	}
 
+	.article-bottom-line{
+		border-bottom: solid #e0e0e0 1px;
+		margin-top: 25px;
+	}
 }

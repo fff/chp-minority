@@ -4,9 +4,13 @@
 mixin article(title_cn, tilte_en)
 	.article
 		.article-title-block.row
-			.article-label
+			.article-left-panel
+				.article-label
 			.article-title
 				strong= title_cn
 				.small= tilte_en
 		.article-body.row
-			block
+			.article-left-panel
+			.article-content
+				block
+				.article-bottom-line
