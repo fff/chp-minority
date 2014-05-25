@@ -1,6 +1,17 @@
 -var gsize = 10
 -var gosize = (12-gsize)/2
 
+mixin menu_item(cn, en, link, current)
+	if link == current
+		-var activeClass='active'
+	else
+		-var activeClass='inactive'	
+	li
+		a(href='#{link}.html', class='#{activeClass}')
+			p
+				strong!= cn
+			p.small!= en
+
 mixin article(title_cn, tilte_en)
 	.article
 		.article-title-block.row
@@ -14,3 +25,32 @@ mixin article(title_cn, tilte_en)
 			.article-content
 				block
 				.article-bottom-line
+
+mixin page(link)
+	include head
+	body
+		.row.top
+			.top-center(class='col-md-#{gsize} col-xs-#{gsize} col-md-offset-#{gosize} col-xs-offset-#{gosize}')
+				.menu-block.col-md-8.col-xs-8
+					.logo-block
+						.logo.col-md-5.col-xs-5
+							a(href='#')
+								img(src='/images/mino-logo.png')
+						.slogan.col-md-7.col-xs-7.text-left 
+							p 
+								strong 文化是权利，是资源，是创造力；对少数民族而言，文化尤为如此。这里是少数民族文化发展合作平台，敬请参与。
+							p.small Civil Society Empowerment in China: Guaranteeing and Developing Cultural Rights of Ethnic Minorities.
+					.menu
+						ul.nav.navbar-nav.text-center
+							+menu_item('首页', 'HOME', 'index', link)
+							+menu_item('法律与公约', 'LAWS & CONVENTIONS', 'laws_and_conventions', link)
+							+menu_item('案例与方法', 'CASE STUDY', 'case_study', link)
+							+menu_item('咨询与合作', 'GET INVOLVED', 'get_invoved', link)
+							+menu_item('关于我们', 'ABOUT US', 'about_us', link)
+							+menu_item('捐赠', 'DONATE', 'donate', link)
+				.flowers.col-md-4
+					img(src='/images/flowers.png')
+		.container-fluid
+			.main(class='col-md-#{gsize} col-xs-#{gsize} col-md-offset-#{gosize} col-xs-offset-#{gosize}')
+				block
+		include bottom
