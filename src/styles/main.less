@@ -2,6 +2,8 @@
 @red: #94272c;
 @inactive: #585858; 
 
+@bigFont: 125%;
+
 .top,.bottom {
 	background-color: @gray;
 }
@@ -30,7 +32,7 @@
 
 		.slogan {
 			display: inline-block;
-			font-size: 19px;
+			font-size: @bigFont;
 		}
 
 	}
@@ -49,17 +51,19 @@
 }
 
 .flowers img{
-	width: 100%;
+	width: 110%;
 	height: 100%;
-	margin-top: -11%;
+	margin-top: -21%;
 }
 
 .inactive {
 	color: @inactive;
+	font-weight: inherit;
 }
 
 .active {
-	color: @red
+	color: @red;
+	font-weight: inherit;
 }
 
 .main {
@@ -71,7 +75,6 @@
 
 	.article-left-panel{
 		width: 5px;
-		height: 50px;
 		display: inline-block;
 		margin-right: 25px;
 	}
@@ -102,13 +105,61 @@
 		border-bottom: solid #e0e0e0 1px;
 		margin-top: 25px;
 	}
+
+	.article-bottom-line-transparent{
+		margin-top: 25px;
+	}
 }
 
 .introduction {
 	.content {
-		padding: 25px 35px 15px 35px;
+		padding: 35px 85px 25px 75px;
+		margin-bottom: 25px;
 		border: black solid 1px;
-		width: 80%;
 		font-size: 111%;
 	}
+}
+
+.index-column1, .index-column2 {
+	padding: 0;
+}
+
+.index-column1 {
+	padding-right: 10px;
+	index-news-list {
+
+	}
+}
+.index-column2 {
+	padding-left: 15px;
+}
+
+.block {
+	.block-title {
+		background-color: @gray;
+		padding: 5px 0 5px 35px;
+		span {
+			font-size: @bigFont;
+		}
+		.view-more {
+			float: right;
+			font-size: 80%;
+			margin: 3px 10px 3px 0;
+		}
+	}
+
+	.block-content {
+		margin-top: 10px;
+		padding: 0 5px 0 5px;
+	}
+}
+
+.case {
+	.case-title {
+		background-color: @gray;
+		margin-right: 35px;
+		padding: 12px 0 5px 25px;
+	}
+
+	margin-bottom: 20px;
 }

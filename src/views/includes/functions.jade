@@ -7,12 +7,12 @@ mixin menu_item(cn, en, link, current)
 	else
 		-var activeClass='inactive'	
 	li
-		a(href='#{link}.html', class='#{activeClass}')
+		a(href='/#{link}.html', class='#{activeClass}')
 			p
 				strong!= cn
 			p.small!= en
 
-mixin article(title_cn, tilte_en)
+mixin article(title_cn, tilte_en, isLast)
 	.article
 		.article-title-block.row
 			.article-left-panel
@@ -24,7 +24,22 @@ mixin article(title_cn, tilte_en)
 			.article-left-panel
 			.article-content
 				block
+				if !isLast
+					.article-bottom-line
+
+mixin law(title_cn, tilte_en, link, isLast)
+	.article
+		.article-title-block.row
+			.article-left-panel
+				.article-label
+			.article-title
+				a(href='/#{link}.html')
+					strong= title_cn
+					.small= tilte_en
+			if !isLast
 				.article-bottom-line
+			else
+				.article-bottom-line-transparent
 
 mixin page(link)
 	include head
@@ -45,7 +60,7 @@ mixin page(link)
 							+menu_item('首页', 'HOME', 'index', link)
 							+menu_item('法律与公约', 'LAWS & CONVENTIONS', 'laws_and_conventions', link)
 							+menu_item('案例与方法', 'CASE STUDY', 'case_study', link)
-							+menu_item('咨询与合作', 'GET INVOLVED', 'get_invoved', link)
+							+menu_item('咨询与合作', 'GET INVOLVED', 'get_involved', link)
 							+menu_item('关于我们', 'ABOUT US', 'about_us', link)
 							+menu_item('捐赠', 'DONATE', 'donate', link)
 				.flowers.col-md-4

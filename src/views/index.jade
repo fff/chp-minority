@@ -1,7 +1,30 @@
 include includes/functions
+
+
+mixin index-block(title, link)
+	.block
+		.block-title
+			span= title
+			.view-more
+				a(href='/#{link}.html') 更多&nbsp;More 
+		.block-content
+			block
+
 +page('index')
-	.row.introduction
+	.introduction.row
 		.content
 			p 如何可持续地保护和发展少数民族文化权益？如何使公众便于并乐于参与保护和发展少数民族文化权益？CHP在此前工作的基础上发起设立了这个专项合作平台。
 			p How do we sustainably protect and develop the cultural rights of ethnic minorities? How do we encourage the public to conveniently and willingly participate in this cause? CHP established this specialized cooperative platform based on foundations built from previous experiences.
+	.index-blocks.row
+		.col-md-8.index-column1
+			+index-block('新闻动态 News', 'news')
+				.col-md-4.index-column1-img
+				.col-md-8.index-news-list
+
+		.col-md-4.index-column2
+			.index-get-involved
+				+index-block('咨询与合作 Get Involved', 'get_invovled')
+					p 任何机构，任何个人，只要您有志于保护和发展少数民族文化权益，或者对少数民族文化发展有所兴趣，就能够在弥诺平台上，发现机会，发挥作用，得到合作，实现价值。
+					p Any individual or organization interested in protecting and developing the cultural rights of ethnic minorities, or interested in their cultural development, will be able to discover project opportunities, connect with collaborators, contribute and make a difference through the CHPMinority platform.
+				+index-block('公众账号 Public Accounts', 'about_us')
 

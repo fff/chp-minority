@@ -1,0 +1,16 @@
+include includes/functions
+mixin case(title_cn, title_en)
+	.case.row.col-md-6
+		.case-title
+			strong= title_cn
+			.small= title_en
+		.case-block
+			block
+
++page('case_study')
+	.row
+		+case('文化记录及传播','Cultural Documentation and Communication')
+		+case('圣地维护及抢救','The Restoration and Rescue of Sacred Locations')
+		+case('老城区及历史村落保护','Protection of Old Towns and Historic Villages')
+		+case('表演艺术及节庆活动','Performing Arts and Festivals')
+		+case('传统工艺及市场推广','Promotion of Traditional Arts and Crafts')
