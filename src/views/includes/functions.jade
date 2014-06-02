@@ -38,13 +38,13 @@ mixin page(link)
 	include head
 	body
 		.row.top
-			.top-center(class='col-md-#{gsize} col-xs-#{gsize} col-md-offset-#{gosize} col-xs-offset-#{gosize}')
-				.menu-block.col-md-8.col-xs-8
+			.top-center(class='col-md-#{gsize} col-xs-12 col-md-offset-#{gosize}')
+				.menu-block.col-md-8.col-xs-12
 					.logo-block
-						.logo.col-md-5.col-xs-5
+						.logo.col-md-5.col-xs-12
 							a(href='#')
 								img(src='/images/mino-logo.png')
-						.slogan.col-md-7.col-xs-7.text-left 
+						.slogan.col-md-7.col-xs-12.text-left 
 							p 
 								strong 文化是权利，是资源，是创造力；对少数民族而言，文化尤为如此。这里是少数民族文化发展合作平台，敬请参与。
 							p.small Civil Society Empowerment in China: Guaranteeing and Developing Cultural Rights of Ethnic Minorities.
@@ -59,7 +59,7 @@ mixin page(link)
 				.flowers.pull-right
 					img(src='/images/flowers.png')
 		.container-fluid
-			.main(class='col-md-#{gsize} col-xs-#{gsize} col-md-offset-#{gosize} col-xs-offset-#{gosize}')
+			.main(class='col-md-#{gsize} col-xs-12 col-md-offset-#{gosize}')
 				a#main
 				block
 		include bottom

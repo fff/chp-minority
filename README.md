@@ -7,3 +7,10 @@
 1. Run `static dist` - launch demo site
 1. Vist the demo site at [http://localhost:8080](http://localhost:8080)
 1. Install [liveReload](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei) to watch changes at real-time
+
+## TODO
+1. Robot.txt
+1. ads
+1. SSO
+1. lint && minify
+1. xs

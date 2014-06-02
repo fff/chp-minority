@@ -14,8 +14,6 @@
     "grunt-contrib-clean": "~0.5.0",
     "grunt-contrib-copy": "~0.5.0",
     "grunt-contrib-imagemin": "~0.7.1",
-    "imagemin-mozjpeg": "~0.1.2",
-    "mozjpeg": "~0.1.2",
     "grunt-newer": "~0.7.0",
     "grunt-image-resize": "~0.3.0"
   },
