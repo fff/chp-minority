@@ -13,7 +13,7 @@ mixin case(title_cn, title_en, img_url, examples)
 				strong= title_cn
 				.small= title_en
 		.panel-body.row
-			.thumbnail.pull-left.col-md-5
+			.thumbnail.pull-left.col-md-6.col-xs-6
 				img(src='/images/case/case_#{img_url}.jpg')
 			block
 		+list(examples)
@@ -24,33 +24,42 @@ mixin case(title_cn, title_en, img_url, examples)
 			+case('文化记录及传播'
 					,'Cultural Documentation and Communication'
 					,'documentation'
-					,[{	link: 'case_mengma',
-							title: '勐马档案 Mengma Archives'
-							},{	link: 'case_aer',
-							title: '阿尔羌文化保护 Cultural Protection of Aer Qiang Minority'
-							},{	link: 'case_congjiang',
-							title: '从江文化绘图 Cultural Mapping of CongJiang'
-							},
+					,[
+						{link: 'case_mengma', title: '勐马档案 Mengma Archives'},
+						{link: 'case_aer', title: '阿尔羌文化保护 Cultural Protection of Aer Qiang Minority'},
+						{link: 'case_congjiang', title: '从江文化绘图 Cultural Mapping of CongJiang'}
 						])
 				p 保护和发展少数民族文化权益，首要的是记录和传播少数民族文化。记录和传播少数民族文化，应当确保其内涵的真实性、完整性。应当由文化的创造者、传承者亲自记录自己的文化，“外人”尽少干预。应当用当地居民普遍理解和接受的表述方法，解释学术界的理论、观点，并尽力使这些理论、观点能够与文化创造者、传承者的记忆内容和思维方式发生碰撞。记录内容的分类体系和表述方法，本身就是文化，也是记录者的权利，应当得到尊重和保障。传播只是手段，传播者和传播方法不应当对记录的文化有任何篡改或“再创作”；传播过程中记录者的名誉、利益等，也应当得到充分尊重和保障。
 				p The key to the protection and development of the cultural rights of ethnic minorities is the documentation and communication of their culture.
-				//- table.table.table-resposive
-					//- tr
-					//- 	td
-					//- 		勐马档案 Mengma Archives
-					//- tr
-					//- 	td
+
+			
+			+case('老城区及历史村落保护'
+					,'Protection of Old Towns and Historic Villages'
+					,'villages'
+					,[ {link:'case_villages_kashgar', title: '喀什老城保护Protection of the Kashgar Old Town'}])
+				p 少数民族聚居的老城区及历史村落，是当地少数民族的家园，是最具少数民族特色的文化空间，也是少数民族文化发展最肥沃的土壤。保护老城区及历史村落，首要的是防止原住民“被迁移”以及“大拆大建”，否则，家园将丧失，文化空间将消散，土壤将流失。防止“被迁移”和“大拆大建”，需要当地居民与“外人”合作，具体深入地阐释文化遗产保护以及少数民族文化繁荣发展的重要意义，运用媒体和法律的力量，传播老城区及历史村落潜在的巨大价值，遏制贪腐势力和无良商人的毁灭性、掠夺式开发计划。随着时代进步和经济发展，老城区及历史村落也应当逐步完善生活基础设施，修缮历史建筑，建立社会组织和小微企业，发展特色产业，使少数民族文化的权利、资源、创造力等诸要素良性互动。这些领域，“外人”贡献智慧和热情的空间巨大。
+				p The old towns and historic villages are the homes of minorities. The goal is to prevent original inhabitants from being migrated, in order to preserve the homes and the cultural space of the minorities.
+
+			+case('表演艺术及节庆活动'
+					,'Performing Arts and Festivals'
+					,'festivals'
+					,[{link:'case_festivals_qiang', title:'风雪羌历年 Qiang New Year in the Flurry'}])
+				p 真诚、浓郁的情感，一定伴生丰富、强烈的表达方式和表达内容。个性鲜明的各少数民族，通过其独特的表演艺术及节庆活动，酣畅淋漓地表达着他们的爱恨情仇、恐惧与渴望。保护和发展少数民族文化权益，应当充分尊重少数民族真诚、浓郁的情感，充分尊重其丰富、强烈的表达方式和表达内容，帮助他们在宇宙万物间彰显灵魂，随心而动，哭泣与呐喊。“表演”不是为了取悦观众，只是为了按捺不住的自我“表达”；“节庆”不是为了度假休闲，只是为了祭奠祖先答谢上苍。“外人”通过帮助少数民族开展其独有的表演艺术及节庆活动，也能够洗涤自己的灵魂，感受到“心”的存在。“以文化之”，这是文化发展最本源的目的。
+				p Performing arts and festivals do not serve to entertain the audience, but to express the emotions and sprits of the minorities. The goal of helping minorities display their arts and festivals is to allow more to cleanse their souls and feel the hearts of the culture, which is the ultimate purpose of cultural development.
+
+		.col-md-6.col-xs-6.column2
+			+case('传统工艺及市场推广'
+					,'Promotion of Traditional Arts and Crafts'
+					,'crafts'
+					,[{link:'case_crafts_menglian', title:'孟连手工编织振兴 Reviving Hand-knitting at Menglian'}])
+				p 独特的历史渊源、文化背景、价值体系、思维方式、生态系统、地理环境等，注定了各少数民族都有其丰富、独到、奇幻、高超的传统工艺。这些传统工艺，不仅使多元文化绚丽斑斓，也应当是“生产力”的直接体现。少数民族的传统工艺，需要挖掘、整理、呵护、提升，在尊重文化和保障传承人权益的前提下，受益于现代管理和现代设计，使其服务于不同区域不同阶层人们的精神享受和物质需求。“外人”参与少数民族传统工艺的生产力转化，应当充分尊重当地文化和当地居民，视传统工艺传承人为艺术家，理解并接受当地居民的行为方式和经济诉求。建立规范、高效的社会组织或小微企业，“又红又专”的管理团队和设计团队的潜心服务，能够使传统工艺市场推广的步伐较为稳健。保护和发展少数民族文化权益，造福少数民族普通居民，应当是这个领域所有工作的首要目的。所有外来参与者的其它目的，都不能与之相冲突。
+				p Under the pretext of respect for culture and the rights of craftsmanship inheritance, traditional arts and crafts of minorities need to be discovered, organized, protected, and enhanced, such as through the help of modern management, design as well as market promotion, which will bring benefits to the minorities.
 
 			+case('圣地维护及抢救'
 					,'The Restoration and Rescue of Sacred Locations'
-					,'2')
-			+case('老城区及历史村落保护'
-					,'Protection of Old Towns and Historic Villages'
-					,'3')
-		.col-md-6.col-xs-6.column2
-			+case('表演艺术及节庆活动'
-					,'Performing Arts and Festivals'
-					,'4')
-			+case('传统工艺及市场推广'
-					,'Promotion of Traditional Arts and Crafts'
-					,'5')
+					,'sacred'
+					,[{link: 'case_sacred_aer', title: '抢救阿尔千年古羌碉 The Rescue of Thousand Years Old Qiangdiao in Aer Village'}])
+				p 少数民族聚居区有自己神圣的纪念地。这些纪念地，大多是建筑或遗址，也有峭壁、丛林等，记载着当地族群的渊源和历史，以及曾经的辉煌和悲伤，是他们族群的象征，也是他们心中的圣地。圣地维护及抢救，重在延续族群的渊源和历史记忆，重在表达对族群拥有的辉煌和悲伤的敬畏。无疑，维护和抢救圣地的决定，应当由当地族群自己作出；所有的计划和方案，也应当由当地族群讨论确定。作为“外人”，应当与他们坦诚交流，传播能够确保延续记忆、表达敬畏的方法和程序。如果圣地涉及到法定的“文物保护单位”，或是其它相关法定义务，“外人”还应当尽力向他们提供法律服务。
+				p Minorities have sacred places that carry memories and histories of their culture, places with special meanings that serve as symbols of their culture.
+			
+			

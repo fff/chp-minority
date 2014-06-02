@@ -1,5 +1,6 @@
 ## building
 1. Install Node.js
+1. Install image magick with `brew install imagemagick`
 1. Run `npm install bower grunt-cli node-static -g`
 1. Run `npm install && bower install`
 1. Run `grunt` - build any changes at once

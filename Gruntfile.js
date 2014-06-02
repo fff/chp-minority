@@ -55,6 +55,21 @@ module.exports = function(grunt) {
               }]
             }
         },
+
+        image_resize: {
+            options: {
+                width: 600,
+                quality: 0.9,
+                overwrite: true
+            },
+            resize: {
+                files: [{
+                    expand: true,
+                    cwd: 'dist/images',
+                    src: ['**/*.jpg']
+                }]
+            }
+        },
     	
     	watch: {
     		views: {
@@ -67,7 +82,7 @@ module.exports = function(grunt) {
     		},
             images: {
                 files: 'src/images/**/*',
-                tasks: ['clean:images','newer:imagemin']
+                tasks: ['clean:images','newer:imagemin', 'image_resize']
             },
     		reload: {
     			files: 'dist/**/*',
@@ -85,6 +100,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-newer');
+    grunt.loadNpmTasks('grunt-image-resize');
 	
     grunt.registerTask('release', ['clean', 'copy', 'jade', 'less', 'imagemin'])
     grunt.registerTask('default', ['release', 'watch']);
