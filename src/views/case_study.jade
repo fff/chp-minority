@@ -1,16 +1,56 @@
 include includes/functions
-mixin case(title_cn, title_en)
-	.case.row.col-md-6
-		.case-title
-			strong= title_cn
-			.small= title_en
-		.case-block
+mixin list(items)
+	if items
+		ul.list-group
+			each item in items
+				li.list-group-item
+					a(href='/case/#{item.link}.html')=item.title
+
+mixin case(title_cn, title_en, img_url, examples)
+	.case.panel.panel-default
+		.panel-heading
+			.panel-title
+				strong= title_cn
+				.small= title_en
+		.panel-body.row
+			.thumbnail.pull-left.col-md-5
+				img(src='/images/case/case_#{img_url}.jpg')
 			block
+		+list(examples)
 
 +page('case_study')
 	.row
-		+case('文化记录及传播','Cultural Documentation and Communication')
-		+case('圣地维护及抢救','The Restoration and Rescue of Sacred Locations')
-		+case('老城区及历史村落保护','Protection of Old Towns and Historic Villages')
-		+case('表演艺术及节庆活动','Performing Arts and Festivals')
-		+case('传统工艺及市场推广','Promotion of Traditional Arts and Crafts')
+		.col-md-6.col-xs-6.column1
+			+case('文化记录及传播'
+					,'Cultural Documentation and Communication'
+					,'documentation'
+					,[{	link: 'case_mengma',
+							title: '勐马档案 Mengma Archives'
+							},{	link: 'case_aer',
+							title: '阿尔羌文化保护 Cultural Protection of Aer Qiang Minority'
+							},{	link: 'case_congjiang',
+							title: '从江文化绘图 Cultural Mapping of CongJiang'
+							},
+						])
+				p 保护和发展少数民族文化权益，首要的是记录和传播少数民族文化。记录和传播少数民族文化，应当确保其内涵的真实性、完整性。应当由文化的创造者、传承者亲自记录自己的文化，“外人”尽少干预。应当用当地居民普遍理解和接受的表述方法，解释学术界的理论、观点，并尽力使这些理论、观点能够与文化创造者、传承者的记忆内容和思维方式发生碰撞。记录内容的分类体系和表述方法，本身就是文化，也是记录者的权利，应当得到尊重和保障。传播只是手段，传播者和传播方法不应当对记录的文化有任何篡改或“再创作”；传播过程中记录者的名誉、利益等，也应当得到充分尊重和保障。
+				p The key to the protection and development of the cultural rights of ethnic minorities is the documentation and communication of their culture.
+				//- table.table.table-resposive
+					//- tr
+					//- 	td
+					//- 		勐马档案 Mengma Archives
+					//- tr
+					//- 	td
+
+			+case('圣地维护及抢救'
+					,'The Restoration and Rescue of Sacred Locations'
+					,'2')
+			+case('老城区及历史村落保护'
+					,'Protection of Old Towns and Historic Villages'
+					,'3')
+		.col-md-6.col-xs-6.column2
+			+case('表演艺术及节庆活动'
+					,'Performing Arts and Festivals'
+					,'4')
+			+case('传统工艺及市场推广'
+					,'Promotion of Traditional Arts and Crafts'
+					,'5')
