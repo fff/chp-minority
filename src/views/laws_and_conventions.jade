@@ -1,4 +1,19 @@
 include includes/functions
+
+mixin law(title_cn, tilte_en, link, isLast)
+	.article
+		.article-title-block.row
+			.article-left-panel
+				.article-label
+			.article-title
+				a(href='/#{link}.html#main')
+					strong= title_cn
+					.small= tilte_en
+			if !isLast
+				.article-bottom-line
+			else
+				.article-bottom-line-transparent
+
 +page('laws_and_conventions')
 	+law('中华人民共和国宪法（节选）',
 		'The Constitution of the People’s Republic of China (excerpt)',

@@ -2,25 +2,29 @@ include includes/functions
 
 
 mixin index-block(title, link)
-	.block
-		.block-title
-			span= title
-			.view-more
-				a(href='/#{link}.html') 更多&nbsp;More 
-		.block-content
+	.panel.panel-default
+		.panel-heading
+			.panel-tilte=title
+				.pull-right
+					a(href='/#{link}.html#main').small 更多&nbsp;More 
+		.panel-body
 			block
 
 +page('index')
-	.introduction.row
-		.content
+	.panel.panel-default.row
+		.introduce.panel-body
 			p 如何可持续地保护和发展少数民族文化权益？如何使公众便于并乐于参与保护和发展少数民族文化权益？CHP在此前工作的基础上发起设立了这个专项合作平台。
 			p How do we sustainably protect and develop the cultural rights of ethnic minorities? How do we encourage the public to conveniently and willingly participate in this cause? CHP established this specialized cooperative platform based on foundations built from previous experiences.
 	.index-blocks.row
 		.col-md-8.index-column1
 			+index-block('新闻动态 News', 'news')
-				.col-md-4.index-column1-img
-				.col-md-8.index-news-list
-
+				.col-md-6.index-column1-img.thumbnail
+					img(src='/images/news_0.jpg')
+				.col-md-6.index-news-list
+					table.table.table-responsive
+						+news-item('2014-06-01', '维汉大学生合伙网上卖切糕', 'news1')
+						+news-item('', '', '')
+						
 		.col-md-4.index-column2
 			.index-get-involved
 				+index-block('咨询与合作 Get Involved', 'get_involved')

@@ -4,6 +4,7 @@ module.exports = function(grunt) {
     	clean: {
     		views: ["dist/**/*.html"],
     		styles: ['dist/assets/css'],
+            images: ['dist/images'],
     		release: ["dist/assets"]
     	},
     	
@@ -49,6 +50,10 @@ module.exports = function(grunt) {
     			files: 'src/styles/**/*.less',
     			tasks: ['clean:styles', 'less']
     		},
+            images: {
+                files: 'src/images/**/*',
+                tasks: ['clean:images','copy']
+            },
     		reload: {
     			files: 'dist/**/*',
     			options: {

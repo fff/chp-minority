@@ -27,20 +27,13 @@ mixin article(title_cn, tilte_en, isLast)
 				if !isLast
 					.article-bottom-line
 
-mixin law(title_cn, tilte_en, link, isLast)
-	.article
-		.article-title-block.row
-			.article-left-panel
-				.article-label
-			.article-title
-				a(href='/#{link}.html')
-					strong= title_cn
-					.small= tilte_en
-			if !isLast
-				.article-bottom-line
-			else
-				.article-bottom-line-transparent
-
+mixin news-item(date, title, link)
+	tr
+		td
+			a(href='/news/#{link}.html#main')
+				span=date
+				span.col-md-offset-1=title
+				
 mixin page(link)
 	include head
 	body
@@ -63,9 +56,10 @@ mixin page(link)
 							+menu_item('咨询与合作', 'GET INVOLVED', 'get_involved', link)
 							+menu_item('关于我们', 'ABOUT US', 'about_us', link)
 							+menu_item('捐赠', 'DONATE', 'donate', link)
-				.flowers.col-md-4
+				.flowers.pull-right
 					img(src='/images/flowers.png')
 		.container-fluid
 			.main(class='col-md-#{gsize} col-xs-#{gsize} col-md-offset-#{gosize} col-xs-offset-#{gosize}')
+				a#main
 				block
 		include bottom
