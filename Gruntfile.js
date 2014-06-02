@@ -45,12 +45,12 @@ module.exports = function(grunt) {
         imagemin: {                          
             dynamic: {                       
                 options: {                   
-                    optimizationLevel: 7
+                    optimizationLevel: 3
                 },
                 files: [{
                     expand: true,            
-                    cwd: 'src/images',       
-                    src: ['**/*.{png,jpg,gif}'],
+                    cwd: 'dist/images',       
+                    src: ['**/*.{png,jpg}'],
                     dest: 'dist/images'         
               }]
             }
@@ -59,14 +59,15 @@ module.exports = function(grunt) {
         image_resize: {
             options: {
                 width: 600,
-                quality: 0.9,
+                quality: 1,
                 overwrite: true
             },
             resize: {
                 files: [{
                     expand: true,
-                    cwd: 'dist/images',
-                    src: ['**/*.jpg']
+                    cwd: 'src/images',
+                    src: ['**/*.{png,jpg}'],
+                    dest: 'dist/images'
                 }]
             }
         },
@@ -82,7 +83,7 @@ module.exports = function(grunt) {
     		},
             images: {
                 files: 'src/images/**/*',
-                tasks: ['clean:images','newer:imagemin', 'image_resize']
+                tasks: ['clean:images', 'newer:image_resize','newer:imagemin']
             },
     		reload: {
     			files: 'dist/**/*',
@@ -102,7 +103,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-newer');
     grunt.loadNpmTasks('grunt-image-resize');
 	
-    grunt.registerTask('release', ['clean', 'copy', 'jade', 'less', 'imagemin'])
+    grunt.registerTask('release', ['clean', 'copy', 'jade', 'less', 'image_resize', 'imagemin'])
     grunt.registerTask('default', ['release', 'watch']);
 
 };
