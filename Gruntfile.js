@@ -1,7 +1,9 @@
 'use strict';
+
 module.exports = function(grunt) {
-	grunt.initConfig({
-    	clean: {
+    grunt.initConfig({
+    	
+        clean: {
     		views: ["dist/**/*.html"],
     		styles: ['dist/assets/css'],
             images: ['dist/images'],
@@ -13,7 +15,6 @@ module.exports = function(grunt) {
 				files: [
 					{expand: true, cwd: 'bower_components/bootstrap/dist/', src: ['**'], dest: 'dist/assets/bootstrap/'},
 					{expand: true, cwd: 'bower_components/jquery/dist/', src: ['**'], dest: 'dist/assets/jquery/'},
-                    {expand: true, cwd: 'src/images/', src: ['**'], dest: 'dist/images/'}
 				]
 			}
     	},
@@ -40,6 +41,20 @@ module.exports = function(grunt) {
                     		return destBase + destPath.replace(/\.less$/, '.css'); } } )
 	        	}
     	},
+
+        imagemin: {                          
+            dynamic: {                       
+                options: {                   
+                    optimizationLevel: 7
+                },
+                files: [{
+                    expand: true,            
+                    cwd: 'src/images',       
+                    src: ['**/*.{png,jpg,gif}'],
+                    dest: 'dist/images'         
+              }]
+            }
+        },
     	
     	watch: {
     		views: {
@@ -52,7 +67,7 @@ module.exports = function(grunt) {
     		},
             images: {
                 files: 'src/images/**/*',
-                tasks: ['clean:images','copy']
+                tasks: ['clean:images','newer:imagemin']
             },
     		reload: {
     			files: 'dist/**/*',
@@ -65,11 +80,13 @@ module.exports = function(grunt) {
 
 	grunt.loadNpmTasks('grunt-contrib-jade');
 	grunt.loadNpmTasks('grunt-contrib-less');
-	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-contrib-clean');
-	grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-contrib-imagemin');
+    grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-newer');
 	
-    grunt.registerTask('release', ['clean', 'copy', 'jade', 'less'])
+    grunt.registerTask('release', ['clean', 'copy', 'jade', 'less', 'imagemin'])
     grunt.registerTask('default', ['release', 'watch']);
 
 };
