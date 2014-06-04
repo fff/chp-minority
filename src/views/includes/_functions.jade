@@ -36,9 +36,16 @@ mixin news-item(date, title, link)
 
 mixin chp(word)
 	a(href='http://www.bjchp.org/' target='_blank')=word
+
+mixin mail(word, evt)
+	if !evt
+		- var subject=''
+	else
+		- var subject='?subject='+evt
+	a(href='mailto:chpminority@gmail.com#{subject}' target='_blank')=word
 				
 mixin page(link)
-	include head
+	include _head
 	body
 		.row.top
 			.top-center(class='col-md-#{gsize} col-xs-12 col-md-offset-#{gosize}')
@@ -65,4 +72,4 @@ mixin page(link)
 			.main(class='col-md-#{gsize} col-xs-12 col-md-offset-#{gosize}')
 				a#main
 				block
-		include bottom
+		include _bottom
