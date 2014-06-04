@@ -33,6 +33,9 @@ mixin news-item(date, title, link)
 			a(href='/news/#{link}.html#main')
 				span=date
 				span.col-md-offset-1=title
+
+mixin chp(word)
+	a(href='http://www.bjchp.org/' target='_blank')=word
 				
 mixin page(link)
 	include head
