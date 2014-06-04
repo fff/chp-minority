@@ -13,8 +13,10 @@ module.exports = function(grunt) {
     	copy: {
 			assets: {
 				files: [
-					{expand: true, cwd: 'bower_components/bootstrap/dist/', src: ['**'], dest: 'dist/assets/bootstrap/'},
-					{expand: true, cwd: 'bower_components/jquery/dist/', src: ['**'], dest: 'dist/assets/jquery/'},
+					{expand: true, cwd: 'bower_components/bootstrap/dist/', src: ['js/*.min.js','css/*.min.css','fonts/*'], dest: 'dist/assets/bootstrap/'},
+                    {expand: true, cwd: 'bower_components/jquery/dist/', src: ['*.min.js','*.map'], dest: 'dist/assets/jquery/'},
+                    {expand: true, cwd: 'bower_components/respond/dest/', src: ['*.min.js'], dest: 'dist/assets/respond/'},
+					{expand: true, cwd: 'bower_components/html5shiv/dist/', src: ['*.min.js'], dest: 'dist/assets/html5shiv/'},
 				]
 			}
     	},
