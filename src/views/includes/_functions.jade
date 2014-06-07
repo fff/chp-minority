@@ -32,7 +32,8 @@ mixin news-item(date, title, link)
 		td
 			a(href='/news/#{link}.html#main')
 				span=date
-				span.col-md-offset-1=title
+				span &nbsp;&nbsp;
+				span=title
 
 mixin chp(word)
 	a(href='http://www.bjchp.org/' target='_blank')=word
@@ -43,6 +44,11 @@ mixin mail(word, evt)
 	else
 		- var subject='?subject='+evt
 	a(href='mailto:chpminority@gmail.com#{subject}' target='_blank')=word
+
+mixin news-link(link)
+	p.small (详见:&nbsp;
+		a(href='#{link}')=link
+		|)
 				
 mixin page(link)
 	include _head
