@@ -55,7 +55,7 @@ mixin page(link)
 	body
 		.row.top
 			.top-center(class='col-md-#{gsize} col-xs-12 col-md-offset-#{gosize}')
-				.menu-block.col-md-8.col-xs-12
+				.menu-block.col-md-8.col-sm-12.col-xs-12
 					.logo-block
 						.logo.col-md-5.col-sm-7.col-xs-12
 							a(href='#')
@@ -72,10 +72,10 @@ mixin page(link)
 							+menu_item('咨询与合作', 'GET INVOLVED', 'get_involved', link)
 							+menu_item('关于我们', 'ABOUT US', 'about_us', link)
 							+menu_item('捐赠', 'DONATE', 'donate', link)
-				.flowers.col-md-4.col-xs-12.hidden-sm.hidden-xs
+				.flowers.col-md-4.hidden-sm.hidden-xs
 					img(src='/images/flowers.png')
 		.container-fluid
-			.main(class='col-md-#{gsize} col-xs-12 col-md-offset-#{gosize}')
+			.main(class='col-md-#{gsize} col-md-offset-#{gosize} col-sm-12 col-xs-12')
 				a#main
 				block
 		include _bottom
