@@ -10,7 +10,7 @@
 
 ## TODO
 1. Robot.txt
-1. ads
+1. <del>ads</del>
 1. SSO
 1. lint && minify
-1. xs
+1. <del>xs</del>
