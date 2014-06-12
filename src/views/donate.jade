@@ -6,11 +6,35 @@ include includes/_functions
 			li 埃森哲（中国）有限公司
 
 	+article('捐赠方法', 'How To Donate', true)
-		ul
-			li 电话/TEL: (86-10) 6403-6532 
-			li 邮件/Email: 
-				+mail('chpminority@gmail.com', 'Donation')
-			li 联系人/Contact 张女士/Ms. Zhang		
-		p “无论您捐赠多少钱，我们都向您表示最诚挚的谢意；除非您明确表示反对，您的名字将出现在捐赠者栏目中；如果您明确提出需求，我们将寄送您正式的捐赠收据。”
-		p We would like to express our most sincere gratitude regardless of the amount of your donation. 
+		dl
+			dt 1） 支付宝捐赠 Alipay
+			dd=p
+				input(type='text')
+				button 捐赠
+				p 
+			dt 2） 国内汇款 Bank Transfer within China
+			dd 
+				p 
+				p 帐户名 Account Name: 北京文化遗产保护中心
+				p 帐　号 Account Number: 75090188000034928
+				p 开户行 Bank: 中国光大银行北京东城支行
+				p.small 说明：请在汇款时多加几分钱，例如：￥1000.01，以便与银行对帐。请在汇款后通过邮件（
+					+mail('chpminority@163.com')
+					|)或电话（010-6403 6532）与我们联系，告知捐款金额、汇款日期和您的联系方式。
+				p.small Note: Please append a few cents to the transfer amount for ease of reconciliation (e.g. ￥1000.03), and contact us by email or phone after donation to confirm receipt.	
+			dt 3） 现金捐赠 Cash Donation
+			dd 
+				p 
+				p “弥诺”北京基地：北京市东城区安定门内大街方家胡同46号E座309室
+				p CHP-Minority Office: Room 309, Building E, 46 Fangjia Hutong, Andingmennei Dajie, Dongcheng District, Beijing
+			dt 4）也欢迎您联系我们，讨论捐赠方法 Feel free to contact us for other donation methods：
+			dd 
+				p
+				p 电子邮件 Email： 
+					+mail('chpminority@163.com')
+				p 电话 Tel：(+86-10）6403-6532
+
+
+		p 无论您捐赠多少钱，我们都向您表示最诚挚的谢意；除非您明确表示反对，您的名字将出现在捐赠者栏目中；如果您明确提出需求，我们将寄送您正式的捐赠收据。
+		p We would like to express our most sincere gratitude regardless of the amount of your donation.
 		p You name will appear in our donors list unless you request otherwise. We can send you a formal donation receipt if requested.
