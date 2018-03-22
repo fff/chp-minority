@@ -11,6 +11,6 @@
 ## TODO
 1. Robot.txt
 1. <del>ads</del>
-1. SSO
-1. lint && minify
+1. <del>SSO</del>
+1. <del>lint && minify</del>
 1. <del>xs</del>
